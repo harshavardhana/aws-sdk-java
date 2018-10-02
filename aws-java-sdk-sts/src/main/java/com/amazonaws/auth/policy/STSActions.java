@@ -43,6 +43,15 @@ public enum STSActions implements Action {
      */
     AssumeRoleWithWebIdentity("sts:AssumeRoleWithWebIdentity");
 
+    /**
+     * Action for assuming role with web federation to get a set of temporary
+     * security credentials for users who have been authenticated in a mobile or
+     * web application with a web identity provider.
+     *
+     * @see AWSSecurityTokenService#assumeRoleWithClientGrants(com.amazonaws.services.securitytoken.model.AssumeRoleWithClientGrantsRequest)
+     */
+    AssumeRoleWithClientGrants("sts:AssumeRoleWithClientGrants");
+
     private final String action;
 
     private STSActions(String action) {

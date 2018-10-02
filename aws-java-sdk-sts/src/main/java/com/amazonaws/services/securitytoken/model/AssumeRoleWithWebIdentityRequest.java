@@ -1,11 +1,11 @@
 /*
  * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
- * 
+ *
  * http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
@@ -18,7 +18,7 @@ import javax.annotation.Generated;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * 
+ *
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRoleWithWebIdentity" target="_top">AWS API
  *      Documentation</a>
  */
@@ -52,6 +52,16 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String webIdentityToken;
+
+    /**
+     * <p>
+     * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
+     * must get this token by authenticating the user who is using your application with a web identity provider before
+     * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
+     * </p>
+     */
+    private String clientGrantsToken;
+
     /**
      * <p>
      * The fully qualified host component of the domain name of the identity provider.
@@ -124,7 +134,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Amazon Resource Name (ARN) of the role that the caller is assuming.
      * </p>
-     * 
+     *
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the role that the caller is assuming.
      */
@@ -137,7 +147,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Amazon Resource Name (ARN) of the role that the caller is assuming.
      * </p>
-     * 
+     *
      * @return The Amazon Resource Name (ARN) of the role that the caller is assuming.
      */
 
@@ -149,7 +159,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * The Amazon Resource Name (ARN) of the role that the caller is assuming.
      * </p>
-     * 
+     *
      * @param roleArn
      *        The Amazon Resource Name (ARN) of the role that the caller is assuming.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -171,7 +181,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
-     * 
+     *
      * @param roleSessionName
      *        An identifier for the assumed role session. Typically, you pass the name or identifier that is associated
      *        with the user who is using your application. That way, the temporary security credentials that your
@@ -198,7 +208,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
-     * 
+     *
      * @return An identifier for the assumed role session. Typically, you pass the name or identifier that is associated
      *         with the user who is using your application. That way, the temporary security credentials that your
      *         application will use are associated with that user. This session name is included as part of the ARN and
@@ -224,7 +234,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
      * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
      * </p>
-     * 
+     *
      * @param roleSessionName
      *        An identifier for the assumed role session. Typically, you pass the name or identifier that is associated
      *        with the user who is using your application. That way, the temporary security credentials that your
@@ -248,7 +258,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * must get this token by authenticating the user who is using your application with a web identity provider before
      * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
      * </p>
-     * 
+     *
      * @param webIdentityToken
      *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *        application must get this token by authenticating the user who is using your application with a web
@@ -265,7 +275,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * must get this token by authenticating the user who is using your application with a web identity provider before
      * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
      * </p>
-     * 
+     *
      * @return The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *         application must get this token by authenticating the user who is using your application with a web
      *         identity provider before the application makes an <code>AssumeRoleWithWebIdentity</code> call.
@@ -281,7 +291,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * must get this token by authenticating the user who is using your application with a web identity provider before
      * the application makes an <code>AssumeRoleWithWebIdentity</code> call.
      * </p>
-     * 
+     *
      * @param webIdentityToken
      *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
      *        application must get this token by authenticating the user who is using your application with a web
@@ -291,6 +301,58 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
 
     public AssumeRoleWithWebIdentityRequest withWebIdentityToken(String webIdentityToken) {
         setWebIdentityToken(webIdentityToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
+     * must get this token by authenticating the user who is using your application with a web identity provider before
+     * the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     * </p>
+     *
+     * @param clientGrantsToken
+     *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
+     *        application must get this token by authenticating the user who is using your application with a web
+     *        identity provider before the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     */
+
+    public void setClientGrantsToken(String clientGrantsToken) {
+        this.clientGrantsToken = clientGrantsToken;
+    }
+
+    /**
+     * <p>
+     * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
+     * must get this token by authenticating the user who is using your application with a web identity provider before
+     * the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     * </p>
+     *
+     * @return The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
+     *         application must get this token by authenticating the user who is using your application with a web
+     *         identity provider before the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     */
+
+    public String getClientGrantsToken() {
+        return this.clientGrantsToken;
+    }
+
+    /**
+     * <p>
+     * The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your application
+     * must get this token by authenticating the user who is using your application with a web identity provider before
+     * the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     * </p>
+     *
+     * @param clientGrantsToken
+     *        The OAuth 2.0 access token or OpenID Connect ID token that is provided by the identity provider. Your
+     *        application must get this token by authenticating the user who is using your application with a web
+     *        identity provider before the application makes an <code>AssumeRoleWithClientGrants</code> call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleWithClientGrantsRequest withClientGrantsToken(String clientGrantsToken) {
+        setClientGrantsToken(clientGrantsToken);
         return this;
     }
 
@@ -306,7 +368,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Do not specify this value for OpenID Connect ID tokens.
      * </p>
-     * 
+     *
      * @param providerId
      *        The fully qualified host component of the domain name of the identity provider.</p>
      *        <p>
@@ -334,7 +396,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Do not specify this value for OpenID Connect ID tokens.
      * </p>
-     * 
+     *
      * @return The fully qualified host component of the domain name of the identity provider.</p>
      *         <p>
      *         Specify this value only for OAuth 2.0 access tokens. Currently <code>www.amazon.com</code> and
@@ -361,7 +423,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * Do not specify this value for OpenID Connect ID tokens.
      * </p>
-     * 
+     *
      * @param providerId
      *        The fully qualified host component of the domain name of the identity provider.</p>
      *        <p>
@@ -405,7 +467,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * the upper size limit the policy is, with 100% equaling the maximum allowed size.
      * </p>
      * </note>
-     * 
+     *
      * @param policy
      *        An IAM policy in JSON format.</p>
      *        <p>
@@ -462,7 +524,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * the upper size limit the policy is, with 100% equaling the maximum allowed size.
      * </p>
      * </note>
-     * 
+     *
      * @return An IAM policy in JSON format.</p>
      *         <p>
      *         The policy parameter is optional. If you pass a policy, the temporary security credentials that are
@@ -518,7 +580,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * the upper size limit the policy is, with 100% equaling the maximum allowed size.
      * </p>
      * </note>
-     * 
+     *
      * @param policy
      *        An IAM policy in JSON format.</p>
      *        <p>
@@ -574,7 +636,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
-     * 
+     *
      * @param durationSeconds
      *        The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
      *        maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If
@@ -625,7 +687,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
-     * 
+     *
      * @return The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to
      *         the maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours.
      *         If you specify a value higher than this setting, the operation fails. For example, if you specify a
@@ -675,7 +737,7 @@ public class AssumeRoleWithWebIdentityRequest extends com.amazonaws.AmazonWebSer
      * a URL that Enables Federated Users to Access the AWS Management Console</a> in the <i>IAM User Guide</i>.
      * </p>
      * </note>
-     * 
+     *
      * @param durationSeconds
      *        The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
      *        maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If

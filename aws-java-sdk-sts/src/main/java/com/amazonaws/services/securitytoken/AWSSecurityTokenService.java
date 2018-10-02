@@ -1,11 +1,11 @@
 /*
  * Copyright 2013-2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
- * 
+ *
  * http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
@@ -247,7 +247,7 @@ public interface AWSSecurityTokenService {
      * <code>TokenCode</code> parameters. The <code>SerialNumber</code> value identifies the user's hardware or virtual
      * MFA device. The <code>TokenCode</code> is the time-based one-time password (TOTP) that the MFA devices produces.
      * </p>
-     * 
+     *
      * @param assumeRoleRequest
      * @return Result of the AssumeRole operation returned by the service.
      * @throws MalformedPolicyDocumentException
@@ -363,7 +363,7 @@ public interface AWSSecurityTokenService {
      * </p>
      * </li>
      * </ul>
-     * 
+     *
      * @param assumeRoleWithSAMLRequest
      * @return Result of the AssumeRoleWithSAML operation returned by the service.
      * @throws MalformedPolicyDocumentException
@@ -515,7 +515,7 @@ public interface AWSSecurityTokenService {
      * </p>
      * </li>
      * </ul>
-     * 
+     *
      * @param assumeRoleWithWebIdentityRequest
      * @return Result of the AssumeRoleWithWebIdentity operation returned by the service.
      * @throws MalformedPolicyDocumentException
@@ -551,6 +551,8 @@ public interface AWSSecurityTokenService {
      *      API Documentation</a>
      */
     AssumeRoleWithWebIdentityResult assumeRoleWithWebIdentity(AssumeRoleWithWebIdentityRequest assumeRoleWithWebIdentityRequest);
+
+    AssumeRoleWithClientGrantsResult assumeRoleWithClientGrants(AssumeRoleWithClientGrantsRequest assumeRoleWithClientGrantsRequest);
 
     /**
      * <p>
@@ -607,7 +609,7 @@ public interface AWSSecurityTokenService {
      * </p>
      * </li>
      * </ul>
-     * 
+     *
      * @param decodeAuthorizationMessageRequest
      * @return Result of the DecodeAuthorizationMessage operation returned by the service.
      * @throws InvalidAuthorizationMessageException
@@ -623,7 +625,7 @@ public interface AWSSecurityTokenService {
      * <p>
      * Returns details about the IAM identity whose credentials are used to call the API.
      * </p>
-     * 
+     *
      * @param getCallerIdentityRequest
      * @return Result of the GetCallerIdentity operation returned by the service.
      * @sample AWSSecurityTokenService.GetCallerIdentity
@@ -735,7 +737,7 @@ public interface AWSSecurityTokenService {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
      * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
      * </p>
-     * 
+     *
      * @param getFederationTokenRequest
      * @return Result of the GetFederationToken operation returned by the service.
      * @throws MalformedPolicyDocumentException
@@ -813,7 +815,7 @@ public interface AWSSecurityTokenService {
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken"
      * >Temporary Credentials for Users in Untrusted Environments</a> in the <i>IAM User Guide</i>.
      * </p>
-     * 
+     *
      * @param getSessionTokenRequest
      * @return Result of the GetSessionToken operation returned by the service.
      * @throws RegionDisabledException
